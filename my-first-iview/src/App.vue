@@ -1,37 +1,47 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If iView is successfully added to this project, you'll see an
-        <code v-text="'<Button>'"></code>
-        below
-      </p>
-      <Button type="primary">Button</Button>
-      <Button type="primary" size="small">Button</Button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div style="margin: 200px;">
+    <!-- <Select v-model="model1" style="width:200px">
+      <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+    </Select> -->
+
+    <!-- <Button type="primary">Primary</Button> -->
+
+    <DatePicker type="date" placeholder="Select date" style="width: 200px"></DatePicker>
+    <span>{{$t('message')}}</span>
   </div>
+
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    data() {
+      return {
+        cityList: [{
+            value: 'New York',
+            label: 'New York'
+          },
+          {
+            value: 'London',
+            label: 'London'
+          },
+          {
+            value: 'Sydney',
+            label: 'Sydney'
+          },
+          {
+            value: 'Ottawa',
+            label: 'Ottawa'
+          },
+          {
+            value: 'Paris',
+            label: 'Paris'
+          },
+          {
+            value: 'Canberra',
+            label: 'Canberra'
+          }
+        ],
+        model1: ''
+      }
+    }
   }
-}
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
